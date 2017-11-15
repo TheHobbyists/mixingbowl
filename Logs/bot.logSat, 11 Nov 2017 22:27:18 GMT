@@ -1,0 +1,49 @@
+[2017-11-11 16:27:18.797] [INFO] mixer - At the beginning of the stream, you had 6318 total views and 712 followers...
+[2017-11-11 16:27:19.330] [INFO] mixer - The bot has successfully connected to the channel!
+[2017-11-11 16:29:39.692] [INFO] mixer - TheHobbyists has left.
+[2017-11-11 16:31:12.803] [INFO] mixer - InsanePainzPC has joined. Sparks: 500
+[2017-11-11 16:31:27.816] [INFO] mixer - Followed: undefined
+[2017-11-11 16:31:27.859] [INFO] mixer - TheHobbyists: Thank you for the follow InsanePainzPC!!!
+[2017-11-11 16:31:27.972] [INFO] mixer - TheHobbyists has joined. Sparks: 97969
+[2017-11-11 16:31:28.008] [INFO] mixer - TheHobbyists: Hi TheHobbyists! Welcome to our stream!
+[2017-11-11 16:31:35.796] [INFO] mixer - Unfollowed: undefined
+[2017-11-11 16:31:36.959] [INFO] mixer - Followed: undefined
+[2017-11-11 16:31:43.992] [INFO] mixer - Unfollowed: undefined
+[2017-11-11 16:32:16.108] [INFO] mixer - TheHobbyists: InsanePainzPC has 100 points! Can you beat that? 
+[2017-11-11 16:32:22.529] [INFO] mixer - TheHobbyists: Hot Flash!!!
+[2017-11-11 16:33:10.532] [INFO] mixer - TheHobbyists: Hot Flash!!!
+[2017-11-11 16:33:19.759] [INFO] mixer - madkiwi: lol
+[2017-11-11 16:33:19.859] [INFO] mixer - madkiwi has joined. Sparks: 111412
+[2017-11-11 16:33:27.670] [INFO] mixer - InsanePainzPC: hows it going
+[2017-11-11 16:33:38.810] [INFO] mixer - madkiwi: it goes.
+[2017-11-11 16:33:59.195] [INFO] mixer - madkiwi: i see voltage measuring devices... had to check it out
+[2017-11-11 16:34:45.700] [INFO] mixer - madkiwi: your mic volume is a tad quiet, or i'm in need of better hearing.. lol. which is also possible.
+[2017-11-11 16:35:07.328] [INFO] mixer - madkiwi: woah..
+[2017-11-11 16:35:22.218] [INFO] mixer - madkiwi: nah you're fine
+[2017-11-11 16:35:24.565] [INFO] mixer - madkiwi: yes
+[2017-11-11 16:35:25.089] [INFO] mixer - madkiwi: much
+[2017-11-11 16:36:52.417] [INFO] mixer - 19FIREFOX84 has joined. Sparks: 1210
+[2017-11-11 16:38:32.004] [INFO] mixer - madkiwi: so what's goal here lads, what're you building?
+[2017-11-11 16:39:47.166] [INFO] mixer - madkiwi: i'm always curious when i see robotics on mixer, cos we have such an amazing interactive system, would be cool to see what people do with it.
+[2017-11-11 16:40:16.398] [INFO] mixer - madkiwi: nice.
+[2017-11-11 16:40:24.749] [INFO] mixer - Followed: undefined
+[2017-11-11 16:40:24.784] [INFO] mixer - TheHobbyists: Thank you for the follow 19FIREFOX84!!!
+[2017-11-11 16:40:26.136] [INFO] mixer - madkiwi: well now i HAVE to test it..
+[2017-11-11 16:40:32.400] [INFO] mixer - Followed: undefined
+[2017-11-11 16:40:32.431] [INFO] mixer - TheHobbyists: Thank you for the follow madkiwi!!!
+[2017-11-11 16:41:07.346] [INFO] mixer - 19FIREFOX84: tweet out ???
+[2017-11-11 16:41:17.896] [INFO] mixer - HypeBot: 
+[2017-11-11 16:41:17.953] [INFO] mixer - TheHobbyists: Thank you for the host Bald guy in a bathrobe in a basement.!!!
+[2017-11-11 16:41:39.590] [INFO] mixer - 19FIREFOX84: lol
+[2017-11-11 16:41:45.135] [INFO] mixer - madkiwi: yeah wrong endpoint
+[2017-11-11 16:41:55.052] [INFO] mixer - madkiwi: desc, not name..
+[2017-11-11 16:42:04.262] [INFO] mixer - madkiwi: should be user.user_name
+[2017-11-11 16:42:12.147] [INFO] mixer - madkiwi: or "callback.user_name
+[2017-11-11 16:42:43.492] [INFO] mixer - madkiwi: the packet is the User data packet 
+[2017-11-11 16:42:51.372] [INFO] mixer - HypeBot: 
+[2017-11-11 16:42:51.415] [INFO] mixer - TheHobbyists: Thank you for the host 19FIREFOX84's Channel!!!
+[2017-11-11 16:43:05.947] [INFO] mixer - madkiwi: that's my topic.
+[2017-11-11 16:43:29.914] [INFO] mixer - madkiwi: <-- was slinging this api before beam was beam.
+[2017-11-11 16:43:45.323] [INFO] mixer - InsanePainzPC has left.
+[2017-11-11 16:43:57.762] [INFO] mixer - InsanePainzPC has joined. Sparks: 226
+[2017-11-11 16:44:19.241] [INFO] mixer - madkiwi: 

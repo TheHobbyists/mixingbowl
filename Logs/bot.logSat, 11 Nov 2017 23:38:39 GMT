@@ -1,0 +1,22 @@
+[2017-11-11 17:38:40.559] [INFO] mixer - At the beginning of the stream, you had 6331 total views and 715 followers...
+[2017-11-11 17:38:41.432] [INFO] mixer - The bot has successfully connected to the channel!
+[2017-11-11 17:39:46.881] [INFO] mixer - madkiwi: oauth short codes are the bane of my existance... took me two days to figure out i'd only allowed myself partial permissions to the api...
+[2017-11-11 17:40:58.699] [INFO] mixer - madkiwi: oauth once working beautifully is lovely...
+[2017-11-11 17:41:23.675] [INFO] mixer - madkiwi: but thankfully, you can just set a 1 year api key expiration, and be damned with expiration 
+[2017-11-11 17:41:44.571] [INFO] mixer - madkiwi: yeah...
+[2017-11-11 17:42:28.456] [INFO] mixer - madkiwi: yup. but using  shortcodes wont let you do that at ALL, i think it's 6 hour expiration is defualt.
+[2017-11-11 17:42:57.801] [INFO] mixer - madkiwi: you can pass auth as header..
+[2017-11-11 17:43:03.811] [INFO] mixer - madkiwi: so it wont bitch if you pass each time.
+[2017-11-11 17:43:25.128] [INFO] mixer - madkiwi: that's the way to do it!
+[2017-11-11 17:47:10.471] [INFO] mixer - TheHobbyists: !patreon
+[2017-11-11 17:47:10.472] [INFO] mixer - Told how to donate: TheHobbyists
+[2017-11-11 17:47:10.518] [INFO] mixer - TheHobbyists: 
+[2017-11-11 17:47:10.628] [INFO] mixer - TheHobbyists has joined. Sparks: 98119
+[2017-11-11 17:47:10.654] [INFO] mixer - TheHobbyists: Hi TheHobbyists! Welcome to our stream!
+[2017-11-11 17:47:26.439] [INFO] mixer - InsanePainzPC: !patreon
+[2017-11-11 17:47:26.439] [INFO] mixer - Told how to donate: InsanePainzPC
+[2017-11-11 17:54:21.124] [INFO] mixer - InsanePainzPC has left.
+[2017-11-11 17:56:48.062] [INFO] mixer - InsanePainzPC has joined. Sparks: 170
+[2017-11-11 18:01:16.898] [INFO] mixer - TheHobbyists: Hot Flash!!!
+[2017-11-11 18:01:30.922] [INFO] mixer - madkiwi: just keeping you boys on your toes 
+[2017-11-11 18:02:55.922] [INFO] mixer - Followed: undefined
