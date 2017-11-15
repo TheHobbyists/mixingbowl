@@ -32,9 +32,12 @@ let followArray = [];
 let pointArray = [];
 let currentViewers;
 let client = new interactive.GameClient();
+let latestFollower = followArray[24];
 
 //Variables
 var myBoard, myLed;
+var info = "";
+var followerList = "";
 myBoard = new five.Board({repl: false});
 lightState = hue.lightState;
 Carina.WebSocket = ws;
@@ -42,10 +45,6 @@ Carina.WebSocket = ws;
 //Console Input Initialize
 process.stdin.resume();
 process.stdin.setEncoding('utf8');
-
-
-
-
 
 //Arduino
 myBoard.on("ready", function() {
@@ -57,7 +56,6 @@ myBoard.on("ready", function() {
     myLed.off(1000);
   }, 3000)
 });
-
 
 //Discord
 var bot = new Discord.Client({
@@ -89,7 +87,21 @@ api.setLightState(3, white).done();
 api.setLightState(5, on).done();
 api.setLightState(5, white).done();
 
+//HTTP Server Setup
+var params = {
+    port: 1234, // Set the server port. Defaults to 8080.
+    host: "0.0.0.0", // Set the address to bind to. Defaults to 0.0.0.0 or process.env.IP.
+    root: "/Users/Austin/Random/Mixer\ Bot/HTTP", // Set root directory that's being served. Defaults to cwd.
+    open: false, // When false, it won't load your browser by default.
+    ignore: 'scss,my/templates', // comma-separated string for paths to ignore
+    file: "index.html", // When set, serve this file for every 404 (useful for single-page applications)
+    wait: 1000, // Waits for all changes, before reloading. Defaults to 0 sec.
+    mount: [['/components', './node_modules']], // Mount a directory to a route.
+    logLevel: 2, // 0 = errors only, 1 = some, 2 = lots
+    middleware: [function(req, res, next) { next(); }] // Takes an array of Connect-compatible middleware that are injected into the server middleware stack
+};
 
+liveServer.start(params);
 
 //MySQL
 var con = mysql.createConnection({
@@ -104,28 +116,7 @@ con.connect(function(err) {
   console.log("Connected!");
 });
 
-//Mixer
-beam.use('oauth', {
-    tokens: {
-        access: 'lZNSayxlEkUDcl7ILR0OmEmvLVDE935K5G3b5nDcAk1NGElOQmmNtvxTfz6v1iyN',
-        expires: Date.now() + (365 * 24 * 60 * 60 * 1000)
-    },
-});
-
-var displayResult = function(result) {
-
-    console.log(JSON.stringify(result, null, 2));
-};
-
-interactive.setWebSocket(ws);
-
-//HTML Setup 
-var info = "";
-var followerList = "";
-let latestFollower = followArray[24];
-
-
-//Save functions
+//File System
 function saveInfo(){
 fs.writeFile("/Users/Austin/Random/Mixer Bot/HTTP/info.html", info, function(err) {
     if(err) {
@@ -146,19 +137,30 @@ fs.writeFile("/Users/Austin/Random/Mixer Bot/HTTP/followers.html", newFollowers,
 }); 
 };
 
-//Server Start
-liveServer.start(params);
-
-//Configuring our logging library so it logs correctly. Them good logs.
+//Logs
 log4js.configure({
   appenders: { mixer: { type: 'file', filename: 'logs/bot.log' + new Date().toUTCString() } },
   categories: { default: { appenders: ['mixer'], level: 'all' } }
 });
 
-//We have to run this constant after we setup the log file. That's why it is seperate.
 const logger = log4js.getLogger('mixer');
 
-//Get's the user we have access to with the token
+
+//Mixer
+beam.use('oauth', {
+    tokens: {
+        access: 'lZNSayxlEkUDcl7ILR0OmEmvLVDE935K5G3b5nDcAk1NGElOQmmNtvxTfz6v1iyN',
+        expires: Date.now() + (365 * 24 * 60 * 60 * 1000)
+    },
+});
+
+var displayResult = function(result) {
+
+    console.log(JSON.stringify(result, null, 2));
+};
+
+interactive.setWebSocket(ws);
+
 beam.request('GET', `users/current`)
     .then(response => {
         userInfo = response.body;
@@ -244,23 +246,22 @@ function setOBS(){
                     <p1>discord.gg/78wTSYA</p1>
                 </ul>
             </nav>
-
-<head>
-<script>
-function reload(){
-location.href=location.href
-}
-setInterval('reload()',14000)
-</script>
-</head>
+        <head>
+        <script>
+            function reload(){
+                location.href=location.href
+            }
+            setInterval('reload()',14000)
+        </script>
+        </head>
     `;
     fs.writeFile("/Users/Austin/Random/Mixer Bot/HTTP/scene.html", OBSscene, function(err) {
     if(err) {
         return console.log(err);
     }
     console.log("scene saved!");
-});
-}
+})};
+
 setOBS();
 
 
@@ -523,14 +524,10 @@ client.open({
                 }
             })
         }).then(controls => {
+        controls.forEach((control) => {
 
-    // Now that the controls are created we can add some event listeners to them!
-    controls.forEach((control) => {
-
-        // mousedown here means that someone has clicked the button.
         control.on('mousedown', (inputEvent, participant) => {
 
-            // Let's tell the user who they are, and what they pushed.
             console.log(`${participant.username} pushed, ${inputEvent.input.controlID}`);
 
             if(inputEvent.input.controlID == 1 ){
@@ -593,7 +590,7 @@ client.open({
             }
             if(inputEvent.input.controlID == 2.1){
                 con.query("select name, points from points where admin = 0 order by points desc limit 1", function(err, result) {
-    if          (err) throw err;
+                if (err) throw err;
                 client.updateControls({
                     controls: [{
                     "kind": "button",
@@ -623,7 +620,7 @@ client.open({
             })};
                 if(inputEvent.input.controlID == 2.2){
                 con.query("select name, points from points where admin = 0 order by points desc limit 1", function(err, result) {
-    if          (err) throw err;
+                if (err) throw err;
                 client.updateControls({
                     controls: [{
                     "kind": "button",
@@ -794,7 +791,7 @@ client.open({
             }
             if(inputEvent.input.controlID == 7.1){
                 con.query("select name, points from points where admin = 0 order by points desc limit 1", function(err, result) {
-    if          (err) throw err;
+                if (err) throw err;
                 client.deleteControls({
                     controlIDs: ["7.1"], sceneID: "default"});
                 setTimeout(function(){
@@ -826,9 +823,6 @@ client.open({
     });
 });
 client.on('open', () => console.log('Connected to interactive'));
-
-
-
 
     // Chat connections
     const socket = new BeamSocket(endpoints).boot();
